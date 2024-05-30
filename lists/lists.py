@@ -1,19 +1,19 @@
-'''first_list = ["Blessing", "Emmanuel", "Henry"]
+first_list = ["Blessing", "Emmanuel", "Henry"]
 second_list = ["Blessing", "Emmanuel", "Henry"]
 third_list = second_list
 
 print(first_list == second_list)
 print(first_list is second_list)
-print(third_list is second_list)'''
+print(third_list is second_list)
 
 
-'''classmates = ["Chinedu", "Audu", "Olamide", "Ene"]
+classmates = ["Chinedu", "Audu", "Olamide", "Ene"]
 
 study_group = classmates #creating an alias
 
 study_group.append("Fatima") #modifying the list through one of the references
 
-print(classmates)'''
+print(classmates)
 
 def remove_duplicates(lst):
     new_list = []
