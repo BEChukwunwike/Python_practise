@@ -1,3 +1,4 @@
+I created a sample text file
 Yaay! I successfully used the write mode.
 The file name provided was not existent so It created a new file
 Well, see who just used the append mode. Yippy!

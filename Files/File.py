@@ -35,3 +35,15 @@ with open(r'c:\Users\user\Downloads\Python_practise\Files\sample.txt', 'r', enco
     print(text)
     with open(r'c:\Users\user\Downloads\Python_practise\Files\modify_sample.txt', 'w', encoding='utf-8') as file:
         file.write(text)
+        
+# Merge Files
+with open(r'c:\Users\user\Downloads\Python_practise\Files\modify_sample.txt', 'r', encoding='utf-8') as file:
+    file = file.read()
+    with open(r'c:\Users\user\Downloads\Python_practise\Files\output.txt', 'r', encoding='utf-8') as file1:
+        file1 = file1.read()
+        merged_files = file + '\n' + file1
+        with open(r'c:\Users\user\Downloads\Python_practise\Files\merged.txt', 'w', encoding='utf-8') as file2:
+            file2.write(merged_files)
+
+import os
+os.remove(r'c:\Users\user\Downloads\Python_practise\Files\copy.txt')
