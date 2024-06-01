@@ -1,0 +1,1 @@
+Yaay! I successfully used the write mode. the file name provided was not existent so It created a new file
