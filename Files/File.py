@@ -20,3 +20,18 @@ with open(r'c:\Users\user\Downloads\Python_practise\Files\output.txt', 'r', enco
     with open(r'c:\Users\user\Downloads\Python_practise\Files\copy.txt', 'w', encoding= 'utf-8') as file2:
         for line in file:
             file2.write(line)
+
+# Count words in a file
+with open(r'c:\Users\user\Downloads\Python_practise\Files\output.txt', 'r', encoding='utf-8') as file:
+    text = file.read()
+    words = text.split()
+    word_count = len(words)
+    print(f'\nWord count for output.txt: {word_count}')
+    
+# Find and replace
+with open(r'c:\Users\user\Downloads\Python_practise\Files\sample.txt', 'r', encoding='utf-8') as file:
+    text = file.read()
+    text = text.replace('This is', 'I created')
+    print(text)
+    with open(r'c:\Users\user\Downloads\Python_practise\Files\modify_sample.txt', 'w', encoding='utf-8') as file:
+        file.write(text)
