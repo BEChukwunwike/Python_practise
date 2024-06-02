@@ -10,8 +10,12 @@ class Dog:
     def describe(self):
         print(f'{self.name} is a {self.age} years old {self.breed}')
         
+    def birthday(self):
+        self.age += 1
+        print(f"It's {self.name}'s birthday today. {self.name} is now {self.age}")
+        
 dog1 = Dog('Bingo', 7, 'Beagle')
-dog2 = Dog('spikey', 11, 'Golden Retriever')
+dog2 = Dog('Spikey', 11, 'Golden Retriever')
 dog3 = Dog('Winny', 4, 'bulldog')
     
 dog1.bark()
@@ -19,3 +23,4 @@ dog2.bark()
 dog3.bark()
 
 dog1.describe()
+dog2.birthday()
