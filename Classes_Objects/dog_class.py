@@ -1,4 +1,5 @@
 class Dog:
+    species = 'Canis lupus'
     def __init__(self, name, age, breed):
         self.name = name
         self.age = age
@@ -28,3 +29,6 @@ dog2.birthday()
 dog4 = Dog('Haley', 5, 'German Shephard')
 dog4.birthday()
 dog4.describe()
+
+print(Dog.species)
+print(dog3.species)
