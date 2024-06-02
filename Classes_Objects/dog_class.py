@@ -24,3 +24,7 @@ dog3.bark()
 
 dog1.describe()
 dog2.birthday()
+
+dog4 = Dog('Haley', 5, 'German Shephard')
+dog4.birthday()
+dog4.describe()
