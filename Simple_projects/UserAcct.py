@@ -6,6 +6,13 @@ class UserAccount:
         self.country = country
         self.state = state
         self.password = password
+        self.user_dict = {
+            "first_name": self.fName,
+            "last_name": self.lName,
+            "country": self.country,
+            "state": self.state,
+            "password": self.password
+        }
         
     def getFullName(self):
         return self.fName + " " + self.lName
@@ -47,18 +54,20 @@ class UserAccount:
         self.state = input("Enter your state: ")
         
     def reset_password(self):
-        self.password = input("Enter your new password: ")
-        if self.validate_password():
-            print("Password reset successful")
-        else:
-            print("Password reset failed")
-        
+        while True:
+            self.password = input("Enter your new password: ")
+            if self.validate_password():
+                print("Password reset successful")
+                break
+            else:
+                print("Password reset failed")
+                
     def displayUser(self):
         print(f"Full Name: {self.getFullName()}\nCountry: {self.country}\nState: {self.state}")
         
     
 def main():
-    createAccount = input("Welcome To mySocials: Want to create an account? y/n")
+    createAccount = input("Welcome To mySocials: Want to create an account? y/n: ")
     if createAccount.lower() == "y":
         fName = input("Enter your first name: ")
         lName = input("Enter your last name: ")
@@ -67,10 +76,22 @@ def main():
         password = input("Enter your password: ")
         newUser = UserAccount(fName, lName, country, state, password)
         if newUser.validate_password():
-            UserAccount.userList.append(newUser)
+            UserAccount.userList.append(newUser.user_dict)
             print("Account created successfully")
         else:
             print("Account creation failed")
+    else:
+        print("Thank you for visiting mySocials")
+        
+    updateUser = input("Want to update your profile info? y/n: ")
+    
+    if updateUser.lower() == "y":
+        for user in UserAccount.userList:
+            user.displayUser()
+            user.userUpdate()
+            user.displayUser()
+            user.reset_password()
+            user.displayUser()
     else:
         print("Thank you for visiting mySocials")
         
