@@ -6,6 +6,9 @@ class UserAccount:
         self.country = country
         self.state = state
         self.password = password
+        self.update_user_dict()
+        
+    def update_user_dict(self):
         self.user_dict = {
             "first_name": self.fName,
             "last_name": self.lName,
@@ -52,11 +55,13 @@ class UserAccount:
         self.lName = input("Enter your last name: ")
         self.country = input("Enter your country: ")
         self.state = input("Enter your state: ")
+        self.update_user_dict()
         
     def reset_password(self):
         while True:
             self.password = input("Enter your new password: ")
             if self.validate_password():
+                self.update_user_dict
                 print("Password reset successful")
                 break
             else:
@@ -82,16 +87,24 @@ def main():
             print("Account creation failed")
     else:
         print("Thank you for visiting mySocials")
-        
-    updateUser = input("Want to update your profile info? y/n: ")
+    
+    if UserAccount.userList:
+        updateUser = input("Want to update your profile info? y/n: ")
     
     if updateUser.lower() == "y":
-        for user in UserAccount.userList:
-            user.displayUser()
-            user.userUpdate()
-            user.displayUser()
-            user.reset_password()
-            user.displayUser()
+        for user_dict in UserAccount.userList:
+            user = UserAccount(
+                    user_dict["first_name"],
+                    user_dict["last_name"],
+                    user_dict["country"],
+                    user_dict["state"],
+                    user_dict["password"]
+                )
+            user_dict.displayUser()
+            user_dict.userUpdate()
+            user_dict.displayUser()
+            user_dict.reset_password()
+            user_dict.displayUser()
     else:
         print("Thank you for visiting mySocials")
         
