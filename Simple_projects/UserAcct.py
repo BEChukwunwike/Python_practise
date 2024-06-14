@@ -100,13 +100,16 @@ def main():
                     user_dict["state"],
                     user_dict["password"]
                 )
-            user_dict.displayUser()
-            user_dict.userUpdate()
-            user_dict.displayUser()
-            user_dict.reset_password()
-            user_dict.displayUser()
+            user.displayUser()
+            user.userUpdate()
+            user.displayUser()
+            user.reset_password()
+            user.displayUser()
+            
+            # Update the dictionary in the list
+            user_dict.update(user.user_dict)
     else:
         print("Thank you for visiting mySocials")
         
 if __name__ == '__main__':
-        main()
+    main()
