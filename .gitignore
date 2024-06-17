@@ -1,0 +1,11 @@
+# Ignore the App3.py file
+App3.py
+
+# Ignore environment variable files
+.env
+
+# Ignore __pycache__ directories
+__pycache__/
+
+# Ignore compiled Python files
+*.pyc
