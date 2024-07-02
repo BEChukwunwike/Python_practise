@@ -4,7 +4,7 @@ from django.http import HttpResponse
 def index(request, name=None):
     if name:
         name = name.capitalize()
-    return render(request, 'mydjango/index.html',{
+    return render(request, 'Hello/index.html',{
         'name': name
     })
     
