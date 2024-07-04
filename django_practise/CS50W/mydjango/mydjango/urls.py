@@ -25,6 +25,7 @@ urlpatterns = [
     path('', views.home, name = 'home'),
     path('hello/', include('hello.urls')),
     path('newyear/', include('newyear.urls')),
+    path('tasks/', include('tasks.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
